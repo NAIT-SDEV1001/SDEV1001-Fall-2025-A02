@@ -11,3 +11,6 @@
 
 `python` for the python repl
 
+## Vscode
+
+You can open vscode from the terminal with `code pathname` for example `code .` for the existing folder
