@@ -14,10 +14,10 @@ print('Hello using them single quotes')
 # because there's no matching bracket
 
 # example of an error below
-'''
-$ python hello_world.py
-  File "C:\Users\dmouris\lectures\sdev1001-Fall-2025-A02\1-hello-world-example-start\hello_world.py", line 13
-    print)
-         ^
-SyntaxError: unmatched ')'
-'''
+
+# $ python hello_world.py
+#   File "C:\Users\dmouris\lectures\sdev1001-Fall-2025-A02\1-hello-world-example-start\hello_world.py", line 13
+#     print)
+#          ^
+# SyntaxError: unmatched ')'
+# '''
