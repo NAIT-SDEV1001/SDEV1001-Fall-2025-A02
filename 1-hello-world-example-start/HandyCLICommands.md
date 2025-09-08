@@ -19,3 +19,8 @@ VScode -> three dots -> terminal at the top.
 ## Vscode
 
 You can open vscode from the terminal with `code pathname` for example `code .` for the existing folder
+
+###  To open the Terminal in VSCode
+
+1. Select the "Terminal " at the top
+2. Select "new Terminal"
