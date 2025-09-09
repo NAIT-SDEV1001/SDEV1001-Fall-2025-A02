@@ -24,7 +24,16 @@ number_of_assignments = 4
 work_on_assignment_time = weeks_in_a_semester / number_of_assignments
 
 print(F"You'll have about {work_on_assignment_time} weeks per assignment")
+# this above even if we're dividing two integers we're getting a float!
 
+# let's do an example where we get an input
+number_of_assignments_handed_in_text = input("how many assignments will you hand in (number)? ")
+# let's change this to a number
+number_of_assignments_handed_in = int(number_of_assignments_handed_in_text)
+
+# you can do multiple maths on oneline
+percent_handed_in = number_of_assignments_handed_in / number_of_assignments * 100
+print(F"you're going to hand in {percent_handed_in}% of assignmnets")
 
 # an example of a variable that can't work
 # due to python syntax there's no space
