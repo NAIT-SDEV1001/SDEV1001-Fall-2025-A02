@@ -28,6 +28,7 @@ print(F"You'll have about {work_on_assignment_time} weeks per assignment")
 
 # let's do an example where we get an input
 number_of_assignments_handed_in_text = input("how many assignments will you hand in (number)? ")
+# note you can wrap the input with an int if you'd like.
 # let's change this to a number
 number_of_assignments_handed_in = int(number_of_assignments_handed_in_text)
 
