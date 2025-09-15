@@ -19,5 +19,26 @@ has_ticket = input("Do you have a ticket (y/n)")
 
 if concert_name == "taylor swift" and has_ticket == "y":
     print("you're in the right place and have fun")
+    # we're going to add some else if
+elif concert_name == "metallica":
+    print("that concert is next door")
 else: # if the above conditions are false
-     print("this is not the concert your looking for")
+    print("this is not the concert your looking for")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
