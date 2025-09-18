@@ -10,6 +10,7 @@
 import random
 
 CHARIZARD_CATCH_CHANCE = 95
+
 POKE_BALL_BONUS = 10
 # fixed the equal operator to assingment.
 GREAT_BALL_BONUS = 30
@@ -26,8 +27,14 @@ ball_choice = print("""
     4: Master Ball
 """)
 
-roll = random.randoint(1, 100)
-
+# let's take a look at the docs.
+# randint is a function and let's try it.
+roll = random.randint(1, 100)
+# we can test all cases by just override this random piece.
+# debugging
+# make sure that our does what we expect.
+roll = 1
+print(roll)
 if ball_choice == 1:
     # fixed indentation
     print("Throwing Poke Ball...")
