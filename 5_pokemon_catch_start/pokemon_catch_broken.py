@@ -19,13 +19,16 @@ MASTER_BALL_BONUS = 100
 
 print("You encountered a wild Charizard!")
 
-ball_choice = print("""
+# assigning a print looks weird.
+# fix let's change the print to an input
+# input needs to be converted to an int
+ball_choice = int(input("""
     Which ball would you like to throw (enter the number):
     1: Poke Ball
     2: Great Ball
     3: Ultra Ball
     4: Master Ball
-""")
+"""))
 
 # let's take a look at the docs.
 # randint is a function and let's try it.
@@ -34,10 +37,11 @@ roll = random.randint(1, 100)
 # debugging
 # make sure that our does what we expect.
 roll = 1
-print(roll)
+
 if ball_choice == 1:
     # fixed indentation
     print("Throwing Poke Ball...")
+    # this is equivalent to roll = roll + 1
     roll += POKE_BALL_BONUS
 elif ball_choice == 2:
     print("Throwing Great Ball...")
