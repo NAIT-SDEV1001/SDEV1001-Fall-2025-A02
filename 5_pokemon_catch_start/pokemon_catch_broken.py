@@ -38,30 +38,37 @@ roll = random.randint(1, 100)
 # debugging
 # make sure that our does what we expect.
 
-roll = 1
-# i'm going to print each so that I can solve this problem
-print(F"ball choice {ball_choice}")
-print(F"roll {roll}")
+# at the end you want to remove your debugging pieces
+# I'm going to keep the commented code in here
+# but for your assignments you need to remove commented code.
+# roll = 1
+# # i'm going to print each so that I can solve this problem
+# print(F"ball choice {ball_choice}")
+# print(F"roll {roll}")
 
 if ball_choice == 1:
     # fixed indentation
     print("Throwing Poke Ball...")
     # this is equivalent to roll = roll + 1
     roll += POKE_BALL_BONUS
-    print(f"roll after throw {roll}")
+    # the line below is for debugging purposes remove later.
+    # print(f"roll after throw {roll}")
 elif ball_choice == 2:
     print("Throwing Great Ball...")
     roll += GREAT_BALL_BONUS
-    print(f"roll after throw {roll}")
+    # the line below is for debugging purposes remove later.
+    # print(f"roll after throw {roll}")
 elif ball_choice == 3:
     print("Throwing Ultra Ball...")
     roll += ULTRA_BALL_BONUS
-    print(f"roll after throw {roll}")
+    # the line below is for debugging purposes remove later.
+    # print(f"roll after throw {roll}")
 # we're going to check if it's value 4
 elif ball_choice == 4:
     print("Throwing Master Ball...")
     roll += MASTER_BALL_BONUS
-    print(f"roll after throw {roll}")
+    # the line below is for debugging purposes remove later.
+    # print(f"roll after throw {roll}")
 # handling a case that is 5 and above
 else:
     print("Ball not found! You threw nothing!")
