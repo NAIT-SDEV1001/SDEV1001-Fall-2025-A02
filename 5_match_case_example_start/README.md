@@ -1,4 +1,4 @@
-# Match Case 
+# Match Case
 
 ## Why is this important?
 
@@ -51,7 +51,7 @@ match letter_grade:
         gpa = 2.0
     case "F":
         gpa = 1.0
-    case _: # this is the 
+    case _: # this is the
         print("could not determine numeric grade")
         gpa = 0.0
 
@@ -74,7 +74,7 @@ Enter your letter grade (A, B, C, D): a
 Your GPA is 4.0
 ```
 - Here's an example of what the output should look like if you enter a grade that is not in the match case.
-``` 
+```
 $ python grade_match_case.py
 Enter your letter grade (A, B, C, D): cats
 could not determine numeric grade
