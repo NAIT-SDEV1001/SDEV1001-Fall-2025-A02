@@ -28,3 +28,14 @@ print(F"the last item is {groceries[last_index]}")
 # the error looks like the following IndexError: list index out of range
 # breakpoint()
 
+# let's take a look here at slicing lists
+print("first three items")
+print(groceries[0:3]) # groceries[:3]
+print("Let's get the last 2 items")
+print(groceries[-2:]) # this is the same as groceries[4:]
+print("Let's get third and fourth of the list")
+print(groceries[2:4])
+# always based on the index.
+# whenever you're going to access items in a list
+# whether it's just the single item or
+# multiple items in the list you use the []
