@@ -39,3 +39,17 @@ print(groceries[2:4])
 # whenever you're going to access items in a list
 # whether it's just the single item or
 # multiple items in the list you use the []
+
+# let's add an item at the end of the list
+
+
+
+
+# Let's take a look at what happens if we sort the list
+print("presorting")
+print(groceries)
+groceries.sort() # sorts the list in place
+# sort is going sort numbers, and also
+# sort names, do it's best effort of sorting.
+print("sorted version of groceries")
+print(groceries)
