@@ -41,9 +41,10 @@ print(groceries[2:4])
 # multiple items in the list you use the []
 
 # let's add an item at the end of the list
+groceries.append("more apples granny smith (better ones)")
 
-
-
+# let's insert an item
+groceries.insert(1, "fish")
 
 # Let's take a look at what happens if we sort the list
 print("presorting")
@@ -53,3 +54,4 @@ groceries.sort() # sorts the list in place
 # sort names, do it's best effort of sorting.
 print("sorted version of groceries")
 print(groceries)
+
