@@ -46,8 +46,17 @@ groceries.append("more apples granny smith (better ones)")
 # let's insert an item
 groceries.insert(1, "fish")
 
+# so can you rename things
+# we really want iceberg lettuce.
+# and we also know that the index of lettuce is 0
+GROCERY_ITEM = "iceberg lettuce" #
+groceries[0] = GROCERY_ITEM
+# same as the assignment operator.
+# let's take a look at where the index is
+
 # Let's take a look at what happens if we sort the list
 print("presorting")
+print(F"the presorted index of {GROCERY_ITEM} is {groceries.index(GROCERY_ITEM)}")
 print(groceries)
 groceries.sort() # sorts the list in place
 # sort is going sort numbers, and also
@@ -55,3 +64,15 @@ groceries.sort() # sorts the list in place
 print("sorted version of groceries")
 print(groceries)
 
+print(F"the sorted index of {GROCERY_ITEM} is {groceries.index(GROCERY_ITEM)}")
+
+# remove items in this list
+REMOVE_ITEM = "apples"
+# this is going to remove with the value name
+groceries.remove(REMOVE_ITEM)
+
+# let's remove fish at index
+groceries.pop(2)
+
+print("after our removals")
+print(groceries)
