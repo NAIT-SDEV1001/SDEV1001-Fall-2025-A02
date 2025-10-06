@@ -6,6 +6,7 @@ vowel_count = 0
 VOWEL_LETTERS = "aieou" # we don't do y around here.
 
 # what I'm going to do  is loop over the words' letters
+# remember that strings are character lists you can access each character
 for letter in word:
     print(letter)
     # check if it's a vowel
