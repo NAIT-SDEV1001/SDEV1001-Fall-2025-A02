@@ -1,0 +1,1 @@
+print("Golf Score Calculator")
