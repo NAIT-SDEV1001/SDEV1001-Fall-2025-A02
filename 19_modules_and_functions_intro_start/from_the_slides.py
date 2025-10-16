@@ -61,4 +61,6 @@ def power(number, exponent=None):
 
     return number ** exponent
 
+# that I didn't actually pass in the two
 print(F"3 to power of 2 is {power(3)}")
+print(F"3 to power of 4 is {power(3, 4)}")
