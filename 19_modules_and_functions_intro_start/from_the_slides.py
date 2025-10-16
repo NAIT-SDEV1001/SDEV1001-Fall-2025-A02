@@ -47,3 +47,7 @@ print(F"favourite color is {get_user_favourite_color()}")
 # short function names do a lot of things
 # longer function names do less things.
 # the complexity of your function should be inversely proportional to the name.
+# conditions they can be difficult you can create function that
+# return true or false normally start these function with is_ or has_
+# try to make your function names topical to what you're doing
+# you might think this is easy but its' hard.
