@@ -51,3 +51,14 @@ print(F"favourite color is {get_user_favourite_color()}")
 # return true or false normally start these function with is_ or has_
 # try to make your function names topical to what you're doing
 # you might think this is easy but its' hard.
+
+
+# default parameter values
+def power(number, exponent=None):
+    # if this is None then provide a default value
+    if exponent is None:
+        exponent = 2
+
+    return number ** exponent
+
+print(F"3 to power of 2 is {power(3)}")
