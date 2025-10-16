@@ -13,6 +13,9 @@ def multiplier(num_one, num_two):
     # the multiplication
     return num_one * num_two
     # you can also return nothing in a function
+    # return
+    # None is a special data type python
+    # that denotes nothing a little undefined in js.
 
 # above is the definition and below we'll get
 # different results based on what we pass in
@@ -28,3 +31,19 @@ print(F"result_two is {result_two}")
 
 # with a return you're assigning the result of
 # the function to what you called it with.
+
+# getting with user input
+def get_user_favourite_color():
+    return input("What is your favourite color? ")
+
+print(F"favourite color is {get_user_favourite_color()}")
+
+# let's function size and names.
+# a guideline try to make your function less than 10 lines of code.
+# another guideline try to make your functions have 3-5 parameters max.
+# what functions allow you to do is not nest your code to 10 tabs (10*4 spaces)
+# as a guideline you don't want to have more than 4 (5 sometimes) tabs in your code
+# function naming.
+# short function names do a lot of things
+# longer function names do less things.
+# the complexity of your function should be inversely proportional to the name.
