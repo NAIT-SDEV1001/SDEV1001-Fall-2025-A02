@@ -64,3 +64,35 @@ def power(number, exponent=None):
 # that I didn't actually pass in the two
 print(F"3 to power of 2 is {power(3)}")
 print(F"3 to power of 4 is {power(3, 4)}")
+
+
+def describe_cat(color=None, age=None, name=None):
+    print(F"""
+          This cat's name is {name},
+          is of color {color},
+          and is {age} years old
+    """)
+    return # this is the same as if it wasn't here.
+
+# with keyword arguments you can actually put the args in, any order
+describe_cat(age=15,name="Sushi",color="blue")
+
+# there's args and kwargs
+# this is a bit more of an advanced
+def show_all_args_passed_in(*args):
+    print(args)
+
+# what we're doing above is we have a function with an indeterminate
+# numbe of arguments
+show_all_args_passed_in(
+    "dan"
+)
+
+show_all_args_passed_in(
+    "steve",
+    "gary",
+    "rick",
+    "james",
+    "lisa",
+    "danika"
+)
