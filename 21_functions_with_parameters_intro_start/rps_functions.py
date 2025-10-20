@@ -14,8 +14,7 @@ def translate_number_to_choice(choice_number):
         return "paper"
     # and the number otherwise.
 
-# use this function to get the user input string an
-# and the computer string.
+# we're going to create an is_winner funciton to check if a user is a winner or not.
 
 
 def get_game_result(
@@ -26,14 +25,19 @@ def get_game_result(
     user has won.
     '''
     # use our function above
+    # use this function to get the user input string an
+    # and the computer string.
     user_choice = translate_number_to_choice(user_input)
     computer_choice = translate_number_to_choice(computer_input)
     print("user_choice", user_choice)
     print("computer_choice", computer_choice)
-
+    breakpoint()
     # to get the game result
     # three scenarios
-    # tie if both results
+    # tie if both choices are the same the it's a tie
+    if user_choice == computer_choice:
+        print(F"this is a tie both chose {user_choice}")
+
     # user wins
     # computer wins
 
