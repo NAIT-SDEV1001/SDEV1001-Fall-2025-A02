@@ -1,5 +1,8 @@
 import random
 
+# below our file is called rps_funcitons
+# our function inside of that file is
+# called get_game_result
 from rps_functions import get_game_result
 
 if __name__ == "__main__":
@@ -7,3 +10,11 @@ if __name__ == "__main__":
     computer_input = random.randint(0, 2)
 
     get_game_result(user_input, computer_input)
+
+
+
+
+
+
+
+
