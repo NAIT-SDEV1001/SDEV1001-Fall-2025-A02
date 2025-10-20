@@ -67,7 +67,8 @@ def get_game_result(
     else:
         print("Error in processing")
 
-
+# Note:
+# as a general smaller functions with good names lead to more readable code.
 
 
 
