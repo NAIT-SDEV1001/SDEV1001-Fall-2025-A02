@@ -3,10 +3,10 @@
 # let's modify this so that we get all of the toppings
 # I'm going to do this with args.
 def make_pizza(
-        *args,
+        *args, # you could also call this *toppings
         size=None,
         crust=None,
-        **kwargs
+        **kwargs # you could call this **special_requests
     ):
     # args here is going to be our toppings.
     # kwargs is going to be our special requests.
