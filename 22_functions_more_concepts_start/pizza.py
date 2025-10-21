@@ -17,6 +17,4 @@ def make_pizza(*args, size=None, crust=None):
     """)
     # our args is going to be a list here.
     for topping in args:
-        print(F"""
-        - {topping}
-        """)
+        print(F"""     - {topping}""")
