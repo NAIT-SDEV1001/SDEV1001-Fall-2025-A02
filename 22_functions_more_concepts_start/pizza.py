@@ -24,3 +24,18 @@ def make_pizza(
     for topping in args:
         print(F"""      - {topping}""")
 
+    # we're going to unpack the values
+    if kwargs: # quick check if there's any.
+        print("    special instructions")
+        # we're looping through a dictionary
+        # which you're going to use the key and value
+        # for example if you have
+        # {'cheese': 'double', 'pepperoni': 'extra'}
+        # for the first iteration
+        # key = cheese
+        # value = double
+        # for the second iteration
+        # key = pepperoni
+        # value = extra
+        for key, value in kwargs.items():
+            print(F"      - {key}: {value}")
