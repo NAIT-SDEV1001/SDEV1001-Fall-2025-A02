@@ -36,7 +36,13 @@ def main():
 
             # let's actually call our pizza with key arguments
             # we're just going to handle these toppings
-            pizza.make_pizza(size=size, crust=crust)
+            # from the first step
+            # pizza.make_pizza(size=size, crust=crust)
+            # let's add the toppings and unpack them
+            pizza.make_pizza(
+                *toppings, # these args need to be before key word arguments
+                size=size, crust=crust
+            )
         else:
             print("I didn't get that.")
 # the right way to write files.
