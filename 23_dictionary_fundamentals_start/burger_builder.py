@@ -17,6 +17,21 @@ burger = {
     "bun": "ciabatta" # string
 }
 
+# wait
+# you're actually vegan
+# I want you to reassign the values on the burger
+# patties 4
+burger["patties"] = 4
+# patty_type as beyond burger
+burger["patty_type"] = "beyond burger"
+# cheese False
+burger["cheese"] = False
+# toppings: arugula, tomato, pickle
+burger["toppings"] = ["arugula", "tomato", "pickle"]
+# bun: sesame seed bun.
+burger["bun"] = "sesame seed"
+
+
 # print out the dictionary.
 # print(burger)
 
@@ -36,3 +51,12 @@ print("your toppings are")
 for index in range(len(burger["toppings"])):
     topping = burger["toppings"][index]
     print(F"- {index + 1}: {topping}")
+
+# so that you folks understand how to loop through keys
+# values
+print("Debugging so that we know our entire dictionary")
+for key, value in burger.items():
+    # for example on the first iteartion
+    # key is patties, value is 4
+
+    print(F"key is {key}, value is {value}")
