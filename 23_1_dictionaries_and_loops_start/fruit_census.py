@@ -33,16 +33,24 @@ for voter in fav_fruit_voters.keys():
 print("tallying votes")
 for vote in fav_fruit_voters.values():
     # just for debugging (remove later)
-    print(vote)
+    # print(vote)
     # we're going to use that vote value as a key to the
     # object of voting results and also increase the amount by
     # one.
     voting_results[vote] = voting_results[vote] + 1
+    # above we're using the string of the vote value to access
+    # the value in the voting results
     # debugging purposes
-    print(voting_results[vote])
-print("you can see below that the voting results have been modified")
-print(voting_results)
+    # print(voting_results[vote])
+
+# debugging purposes
+# print("you can see below that the voting results have been modified")
+# print(voting_results)
 
 # we're going to use sorted which will print out the results
 # in order.
+print("The amount of votes are as follows")
+for fruit, number_of_votes in sorted(voting_results.items()):
+    print(F"{fruit} has {number_of_votes} votes")
 
+# the above is going to do this alphabetically.
