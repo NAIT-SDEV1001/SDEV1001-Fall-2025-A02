@@ -23,5 +23,8 @@ print(grades.keys()) # dict_keys(['Alice', 'Bobby', 'Charlie'])
 print(list(grades.keys()))
 
 # we can loop over the values
+print("students")
 for key in grades.keys():
-    print(F"a key is {key}")
+    print(F"- {key}")
+
+# let's
