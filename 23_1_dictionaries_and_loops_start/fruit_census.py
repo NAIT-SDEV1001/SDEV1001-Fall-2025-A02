@@ -54,3 +54,9 @@ for fruit, number_of_votes in sorted(voting_results.items()):
     print(F"{fruit} has {number_of_votes} votes")
 
 # the above is going to do this alphabetically.
+
+# optional
+# print("The amount of votes ascending")
+# for fruit, number_of_votes in sorted(voting_results.items(),
+#                                      key=lambda item: item[1]):# optional
+#     print(F"{fruit} has {number_of_votes} votes")
