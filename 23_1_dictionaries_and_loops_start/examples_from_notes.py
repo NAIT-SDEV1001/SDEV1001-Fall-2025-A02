@@ -27,4 +27,20 @@ print("students")
 for key in grades.keys():
     print(F"- {key}")
 
-# let's
+# let's take a look at the values.
+# note this is the right side of the key value pair in the
+# dictionary (after the :)
+print("looping over values")
+print(grades.values())
+
+
+total = 0
+for grade in grades.values():
+    total = total + grade
+
+print(F"Average is {total/len(grades.values())}")
+
+# here we can take look at all of the properties and
+# methods on a variable
+# you can do this with the dir() method where you pass in
+# the variable as an object
