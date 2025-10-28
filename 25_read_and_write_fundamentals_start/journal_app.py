@@ -57,6 +57,8 @@ def handle_action(action, file):
     elif action == "w":
         new_entry = input("Enter entry: ")
         write_to_journal(file, new_entry)
+    else:
+        print("I didn't understand that.")
     # to check if it write and write to the file
     # that's the case
     # create a function for this.
