@@ -1,5 +1,2 @@
-I've been learning python and it's pretty fun so far!
-I'm really excited to learn how to use pip and virtualenv, and learn more about the python ecosystem.
-Something new 
-Everytime you see this actually added to the bottom left journal.txt
-a small app that reads the items
+huge difference
+add another one

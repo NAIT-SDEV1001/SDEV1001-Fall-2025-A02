@@ -2,12 +2,18 @@
 
 # this is going to be our function
 # to write to the file.
-def write_to_journal(file, entry):
-    with open(file, 'a') as file_object:
+def write_to_journal(file, entry, default_permission=None):
+    if default_permission is None:
+        default_permission = 'a'
+    # if you pass the default_permission as w you're just creating
+    # a new file.
+    with open(file, default_permission) as file_object:
+        # jsut a note:
+        # w is going to write over the file
+        # a is going to append to the existing items
         # we're going to write but also add a new line
         # so that it doesn't add to the end of the last line.
         file_object.write(F"{entry}\n")
-
 
 def read_journal(file):
     try:
@@ -26,8 +32,14 @@ def read_journal(file):
     except FileNotFoundError as error:
         # we're just going to wrap this in an list
         # so that this prints.
-        return [F"Error while opening the file {error}"]
-
+        # part one
+        # return [F"Error while opening the file {error}"]
+        # part two let's create a file and then read, and return those values
+        print("file not found, creating one for you")
+        write_to_journal(file, '', default_permission='w')
+        # we can make this recursive
+        # this will always work because we've just created the file.
+        return read_journal(file)
 
 # In our journal app we're going to handle three actions
 def handle_action(action, file):
@@ -55,7 +67,10 @@ def handle_action(action, file):
 # our application
 # make this in a main function.
 def main():
-    file_path = "journal.txt"
+    # part one using a defined file path.
+    # file_path = "journal.txt"
+    # let's make the name a user input
+    file_path = input("which journal would you like to use? ")
     action = input("Do you want read (r), write (w) or quit (q)")
     # create a while loop that does this
     while action != "q":
