@@ -6,16 +6,29 @@ def read_journal(file):
     try:
         # we're going to use with to read this.
         with open(file, 'r') as file_data:
-            breakpoint()
-    except FileNotFoundError as error:
-        print(F"Error while opening the file {error}")
+            # if you want to debug do the following
+            data = file_data.readlines()
+            # in the above that there's special chars
+            # like \n (escape characters)
+            # we can remove them with strip
+            cleaned_data = []
+            for line in data:
 
+                cleaned_data.append(line.strip())
+                # strip just removes them.
+            return cleaned_data
+
+    except FileNotFoundError as error:
+
+        return F"Error while opening the file {error}"
 def handle_action(action, file):
     print(F"handling {action} on {file}")
     # one that is "r" which is going to list all of the files inside of
     # check if the action is r
     if action == "r":
-        read_journal(file)
+        all_lines = read_journal(file)
+        for line in all_lines:
+            print(line)
         # try to read this file.
     # check to see what the contents of the file are with notes.
 
