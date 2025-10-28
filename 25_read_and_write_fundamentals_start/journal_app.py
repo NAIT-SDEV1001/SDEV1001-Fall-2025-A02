@@ -1,6 +1,13 @@
 # Journal Application
 
-# In our journal app we're going to handle three actions
+# this is going to be our function
+# to write to the file.
+def write_to_journal(file, entry):
+    with open(file, 'a') as file_object:
+        # we're going to write but also add a new line
+        # so that it doesn't add to the end of the last line.
+        file_object.write(F"{entry}\n")
+
 
 def read_journal(file):
     try:
@@ -21,6 +28,8 @@ def read_journal(file):
         # so that this prints.
         return [F"Error while opening the file {error}"]
 
+
+# In our journal app we're going to handle three actions
 def handle_action(action, file):
     print(F"handling {action} on {file}")
     # one that is "r" which is going to list all of the files inside of
@@ -32,9 +41,10 @@ def handle_action(action, file):
         # try to read this file.
     # check to see what the contents of the file are with notes.
 
-
-    # our application
     # second that is "w" which is write the to the application
+    elif action == "w":
+        new_entry = input("Enter entry: ")
+        write_to_journal(file, new_entry)
     # to check if it write and write to the file
     # that's the case
     # create a function for this.
@@ -42,6 +52,7 @@ def handle_action(action, file):
 
     # q which is quit
 
+# our application
 # make this in a main function.
 def main():
     file_path = "journal.txt"
