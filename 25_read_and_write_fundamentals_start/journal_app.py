@@ -44,7 +44,7 @@ def handle_action(action, file):
 
 # make this in a main function.
 def main():
-    file_path = "journal-ish.txt"
+    file_path = "journal.txt"
     action = input("Do you want read (r), write (w) or quit (q)")
     # create a while loop that does this
     while action != "q":
