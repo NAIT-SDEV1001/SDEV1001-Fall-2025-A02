@@ -60,3 +60,6 @@ for fruit, number_of_votes in sorted(voting_results.items()):
 # for fruit, number_of_votes in sorted(voting_results.items(),
 #                                      key=lambda item: item[1]):# optional
 #     print(F"{fruit} has {number_of_votes} votes")
+
+# if you want to take a deeper look at sorting take a look ehre
+# https://docs.python.org/3/howto/sorting.html
