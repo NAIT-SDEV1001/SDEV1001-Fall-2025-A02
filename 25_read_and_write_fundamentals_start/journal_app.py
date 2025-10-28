@@ -13,14 +13,14 @@ def read_journal(file):
             # we can remove them with strip
             cleaned_data = []
             for line in data:
-
                 cleaned_data.append(line.strip())
                 # strip just removes them.
             return cleaned_data
-
     except FileNotFoundError as error:
+        # we're just going to wrap this in an list
+        # so that this prints.
+        return [F"Error while opening the file {error}"]
 
-        return F"Error while opening the file {error}"
 def handle_action(action, file):
     print(F"handling {action} on {file}")
     # one that is "r" which is going to list all of the files inside of
@@ -35,11 +35,16 @@ def handle_action(action, file):
 
     # our application
     # second that is "w" which is write the to the application
+    # to check if it write and write to the file
+    # that's the case
+    # create a function for this.
+    # check to see if the file is found or not.
+
     # q which is quit
 
 # make this in a main function.
 def main():
-    file_path = "journal.txt"
+    file_path = "journal-ish.txt"
     action = input("Do you want read (r), write (w) or quit (q)")
     # create a while loop that does this
     while action != "q":
