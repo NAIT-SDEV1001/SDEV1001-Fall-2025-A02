@@ -2,11 +2,21 @@
 
 # In our journal app we're going to handle three actions
 
+def read_journal(file):
+    try:
+        # we're going to use with to read this.
+        with open(file, 'r') as file_data:
+            breakpoint()
+    except FileNotFoundError as error:
+        print(F"Error while opening the file {error}")
+
 def handle_action(action, file):
     print(F"handling {action} on {file}")
     # one that is "r" which is going to list all of the files inside of
     # check if the action is r
-    # try to read this file.
+    if action == "r":
+        read_journal(file)
+        # try to read this file.
     # check to see what the contents of the file are with notes.
 
 
