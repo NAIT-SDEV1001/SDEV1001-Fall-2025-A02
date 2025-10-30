@@ -8,6 +8,8 @@ import csv
 # will return the list of dictionaries using the dictreader
 def read_nhl_teams_data(file_path, situation):
     # where we're going to use our csvs.
+    # list of all_data
+    all_data = []
     try:
         # with open this is going open and close
         # the file once it goes out of scope of the open
@@ -15,9 +17,16 @@ def read_nhl_teams_data(file_path, situation):
             reader = csv.DictReader(file)
             # read all of the lines line by line
             for row in reader:
-                breakpoint()
+                # we're going to check if the row
+                # key of situation is equal to our value
+                # append it if that's the case.
+                if row["situation"] == situation:
+                    all_data.append(row)
     except FileNotFoundError as error:
         print(F"Error reading the file: {error}")
+    # lets return this data no matter what.
+    return all_data
+
 
 def get_situation_from_user():
     situations = [
@@ -31,7 +40,7 @@ def get_situation_from_user():
     for index, situation in enumerate(situations):
         label += F"- ({index}) {situation}\n"
     label += "(enter number): "
-    print(label)
+
     # convert this to a number
     user_input_situation = int(input(label))
     # as a note for future importment we could handle the errors
@@ -54,6 +63,13 @@ def main():
         file_path=file_path,
         situation=situation
     )
+    # list all of the available columns
+    # one of the dictionaries
+    # prompt the user to select column to sort by index
+    # return the column name from the function
+    # created
+
+
     breakpoint()
 
 # execute the main
