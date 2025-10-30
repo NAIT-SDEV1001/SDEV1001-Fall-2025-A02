@@ -49,6 +49,11 @@ def main():
     # folder structure
     file_path = "data/nhl_teams_data_2024_2025.csv"
     situation = get_situation_from_user()
+    # get the data using our function to read csv
+    teams = read_nhl_teams_data(
+        file_path=file_path,
+        situation=situation
+    )
     breakpoint()
 
 # execute the main
