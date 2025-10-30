@@ -27,7 +27,6 @@ def read_nhl_teams_data(file_path, situation):
     # lets return this data no matter what.
     return all_data
 
-
 def get_situation_from_user():
     situations = [
         "other",
@@ -48,7 +47,38 @@ def get_situation_from_user():
     # return the string of the situation
     return situations[user_input_situation]
 
+def get_stat_column_from_user(teams_data):
+    # list all of the available columns
+    # one of the dictionaries
+    all_available_columns = list(teams_data[0].keys())
+    label = "Available stat columns\n"
+    for index, column in enumerate(all_available_columns):
+        label += F"- ({index}): {column}\n"
+    label += "Enter the column number to select: "
+    choice = int(input(label)) # improvement: handle errors
+    # using our knowledge of arrays.
+    return all_available_columns[choice]
 
+    # prompt the user to select column to sort by index
+    # return the column name from the function
+
+def sort_team_data_by_stat(teams_data, column, reverse=True, top=10):
+    # I'm going to create a special function
+    # what we're going to use in our sorted function
+    def get_column(entry):
+        return entry[column]
+    breakpoint()
+    # descending
+    sorted_teams = sorted(teams_data, key=get_column, reverse=reverse)
+
+    # format it
+    data = []
+    for team_data in teams_data:
+        data.append({
+            "team": team_data["team"],
+            "column": team_data[column]
+        })
+    return data
 # create a main function
 # hard code the situations, prompt the for it
 # read all of the data
@@ -59,18 +89,25 @@ def main():
     file_path = "data/nhl_teams_data_2024_2025.csv"
     situation = get_situation_from_user()
     # get the data using our function to read csv
-    teams = read_nhl_teams_data(
+    teams_data = read_nhl_teams_data(
         file_path=file_path,
         situation=situation
     )
-    # list all of the available columns
-    # one of the dictionaries
-    # prompt the user to select column to sort by index
-    # return the column name from the function
+
     # created
+    column = get_stat_column_from_user(teams_data)
 
+    # sort the team by the stat top x amount
+    # using the sorted function
+    # function is going to need the following params
+    # teams_data, column, reverse=True, top=10
+    # sort the teams return an array of dictionaries
+    # dict is {team: "name", column: "column"}
+    sorted_data = sort_team_data_by_stat(
+        teams_data=teams_data,
+        column=column
+    )
 
-    breakpoint()
 
 # execute the main
 if __name__ == "__main__":
