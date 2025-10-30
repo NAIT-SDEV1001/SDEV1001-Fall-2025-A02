@@ -115,8 +115,7 @@ def main():
     sorted_data = sort_team_data_by_stat(
         teams_data=teams_data,
         column=column,
-        top=top,
-        reverse=False
+        top=top
     )
     # improvement
     # use this in a function, maybe display more columns
