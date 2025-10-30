@@ -66,19 +66,22 @@ def sort_team_data_by_stat(teams_data, column, reverse=True, top=10):
     # I'm going to create a special function
     # what we're going to use in our sorted function
     def get_column(entry):
-        return entry[column]
-    breakpoint()
+        return float(entry[column])
+
     # descending
-    sorted_teams = sorted(teams_data, key=get_column, reverse=reverse)
+    sorted_teams = sorted(teams_data,
+                          key=get_column,
+                          reverse=reverse)
 
     # format it
     data = []
-    for team_data in teams_data:
+    for team_data in sorted_teams:
         data.append({
             "team": team_data["team"],
             "column": team_data[column]
         })
-    return data
+    # if want to only select a subset
+    return data[:top]
 # create a main function
 # hard code the situations, prompt the for it
 # read all of the data
@@ -103,10 +106,26 @@ def main():
     # teams_data, column, reverse=True, top=10
     # sort the teams return an array of dictionaries
     # dict is {team: "name", column: "column"}
+
+    top=10
+    # a few improvements
+    # make the amount to list an input
+    # make whether it's the best or worst teams an input
+    # pass that in.
     sorted_data = sort_team_data_by_stat(
         teams_data=teams_data,
-        column=column
+        column=column,
+        top=top,
+        reverse=False
     )
+    # improvement
+    # use this in a function, maybe display more columns
+    print(F"Top {top} NHL teams by {column}")
+    for index, item in enumerate(sorted_data):
+        rank = index + 1
+        print(F"{rank}. {item['team']} - {item["column"]}")
+
+
 
 
 # execute the main
