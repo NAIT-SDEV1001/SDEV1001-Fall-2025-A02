@@ -1,8 +1,23 @@
+# docs for the module is here:
+# https://docs.python.org/3/library/csv.html
+import csv
 # I want you to create a function
 # that's not only going to take the file path
 # the situation (as params) so we don't have duplicates in our
 # dataset.
 # will return the list of dictionaries using the dictreader
+def read_nhl_teams_data(file_path, situation):
+    # where we're going to use our csvs.
+    try:
+        # with open this is going open and close
+        # the file once it goes out of scope of the open
+        with open(file_path, 'r') as file:
+            reader = csv.DictReader(file)
+            # read all of the lines line by line
+            for row in reader:
+                breakpoint()
+    except FileNotFoundError as error:
+        print(F"Error reading the file: {error}")
 
 def get_situation_from_user():
     situations = [
@@ -33,7 +48,8 @@ def main():
     # filepaths relative to where you are in the
     # folder structure
     file_path = "data/nhl_teams_data_2024_2025.csv"
-
+    situation = get_situation_from_user()
+    breakpoint()
 
 # execute the main
 if __name__ == "__main__":
