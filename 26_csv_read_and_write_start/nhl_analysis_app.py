@@ -82,6 +82,7 @@ def sort_team_data_by_stat(teams_data, column, reverse=True, top=10):
         })
     # if want to only select a subset
     return data[:top]
+
 # create a main function
 # hard code the situations, prompt the for it
 # read all of the data
@@ -123,9 +124,6 @@ def main():
     for index, item in enumerate(sorted_data):
         rank = index + 1
         print(F"{rank}. {item['team']} - {item["column"]}")
-
-
-
 
 # execute the main
 if __name__ == "__main__":

@@ -1,0 +1,2 @@
+I've been learning python and it's pretty fun so far!
+I'm really excited to learn how to use pip and virtualenv, and learn more about the python ecosystem.
