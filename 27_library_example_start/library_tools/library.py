@@ -31,4 +31,6 @@ class Library:
         all_authors = []
         for book in self.books:
             all_authors.append(book.author)
+
+        # this will remove all duplicates below
         return list(set(all_authors))
