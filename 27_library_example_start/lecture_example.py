@@ -19,6 +19,25 @@ class Car:
     def __str__(self):
         return F"Car(make={self.make}, model={self.model}, year={self.year})"
 
+class Garage:
+    def __init__(self, name):
+        # create cars as a list.
+        self.cars = []
+        self.name = name
+
+    def add_car(self, car):
+        ''' car here is an instance of Car above'''
+        self.cars.append(car)
+
+    def set_off_alarm(self):
+        '''make all cars honk'''
+        print("Setting off alarm, all cars honk")
+        for car in self.cars:
+            car.honk()
+
+    def __str__(self):
+        return F"Garage: {self.name}"
+
 if __name__ == "__main__":
     first_car = Car("toyota", "corolla", 2006)
     second_car = Car("Cadillac", "escalade", 2020)
@@ -31,3 +50,10 @@ if __name__ == "__main__":
     print("let's take a look at what the classes look like")
     print(first_car)
     print(second_car)
+
+    print("let's create a garage of cars")
+    garage = Garage("Dans Palace")
+    garage.add_car(first_car)
+    garage.add_car(second_car)
+
+    garage.set_off_alarm()
