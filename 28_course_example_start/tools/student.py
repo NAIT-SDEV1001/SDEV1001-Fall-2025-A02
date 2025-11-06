@@ -1,0 +1,10 @@
+class Student:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+    def __str__(self):
+        return F"{self.name} ({self.id})"
+
+    def __repr__(self):
+        return F"Student(name={self.name}, id={self.id})"
