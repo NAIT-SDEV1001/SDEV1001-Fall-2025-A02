@@ -10,7 +10,7 @@ class Library:
 
     def add_book(self, book):
         # add it to the array
-        self.books.append(book)
+        self.books.append(book)0
 
     def list_books(self):
         if len(self.books) == 0:
