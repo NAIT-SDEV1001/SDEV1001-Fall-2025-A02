@@ -12,7 +12,7 @@ class Course:
         self.assignments = []
 
     def __str__(self):
-        return F"{self.name} has {len(self.students)} students and {len(self.assignments)}"
+        return F"{self.name} has {len(self.students)} students and {len(self.assignments)} assignments"
 
     def __repr__(self):
         return F"Course(name={self.name})"
