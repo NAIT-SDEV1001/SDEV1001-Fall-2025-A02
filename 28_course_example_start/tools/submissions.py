@@ -23,3 +23,6 @@ class Submission:
 
     def __str__(self):
         return F"Student: {self.student.name} recieved grade {self.grade} on {self.assignment.name}"
+
+    def __repr__(self):
+        return F"Submission(id={id})"

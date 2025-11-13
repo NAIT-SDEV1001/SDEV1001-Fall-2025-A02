@@ -34,10 +34,14 @@ def main():
     course.bulk_add_assignments(
         assignment_data=assignment_data
     )
+    course.bulk_add_submissions(
+        submission_data=submission_data
+    )
 
+    breakpoint()
     # add_students(course)
     # add_assignments(course)
-    breakpoint()
+
 
 if __name__ == "__main__":
     main()
