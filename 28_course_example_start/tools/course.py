@@ -11,6 +11,12 @@ class Course:
         self.students = []
         self.assignments = []
 
+    def add_student(self, student):
+        self.students.append(student)
+
+    def add_assignment(self, assignment):
+        self.assignments.append(assignment)
+
     def __str__(self):
         return F"{self.name} has {len(self.students)} students and {len(self.assignments)} assignments"
 
