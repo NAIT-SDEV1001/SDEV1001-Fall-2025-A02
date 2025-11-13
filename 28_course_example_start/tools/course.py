@@ -38,12 +38,11 @@ class Course:
             student = self.get_student(
                 submission_info["student_id"]
             )
-
             # get an assignment
             assignment = self.get_assignment(
                 submission_info["assignment_id"]
             )
-            # create the object
+            # create the object submission
             submission = Submission(
                 student=student,
                 assignment=assignment,
@@ -51,6 +50,16 @@ class Course:
             )
             # add to the students
             student.add_submission(submission)
+
+    def course_average(self):
+        total = 0
+        number_of_submissions = 0
+
+        # loop through students
+            # loop through the submission
+                # tally up grade to the toal
+                # increase the numbe of submission by one
+        # return the total / number of submission
 
 
     # get a student by an id

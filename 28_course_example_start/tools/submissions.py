@@ -25,4 +25,4 @@ class Submission:
         return F"Student: {self.student.name} recieved grade {self.grade} on {self.assignment.name}"
 
     def __repr__(self):
-        return F"Submission(id={id})"
+        return F"Submission(assignment={self.assignment})"
