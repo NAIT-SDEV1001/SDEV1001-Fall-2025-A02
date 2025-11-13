@@ -11,7 +11,7 @@ class Course:
     def add_student(self, student):
         self.students.append(student)
 
-    def bulk_add_stduents(self, student_data):
+    def bulk_add_students(self, student_data):
         for student_info in student_data:
             self.add_student(
                 Student(id=student_info['id'],

@@ -28,7 +28,7 @@ def add_assignments(course):
 
 def main():
     course = Course("Dan's Engagement seminar for sleep")
-    course.bulk_add_stduents(
+    course.bulk_add_students(
         student_data=student_data
     )
     course.bulk_add_assignments(
