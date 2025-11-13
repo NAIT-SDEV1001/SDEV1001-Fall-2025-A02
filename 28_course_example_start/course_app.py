@@ -38,7 +38,8 @@ def main():
         submission_data=submission_data
     )
 
-    breakpoint()
+    print("Average for the course")
+    print(course.get_course_average())
     # add_students(course)
     # add_assignments(course)
 

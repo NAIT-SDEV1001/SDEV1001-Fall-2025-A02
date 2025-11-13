@@ -51,16 +51,22 @@ class Course:
             # add to the students
             student.add_submission(submission)
 
-    def course_average(self):
+    def get_course_average(self):
         total = 0
         number_of_submissions = 0
 
         # loop through students
+        for student in self.students:
+            # note: student is a Student instance
             # loop through the submission
+            for submission in student.get_submissions():
+                # submission is Submission instance
                 # tally up grade to the toal
+                total += submission.grade
                 # increase the numbe of submission by one
+                number_of_submissions += 1
         # return the total / number of submission
-
+        return total / number_of_submissions
 
     # get a student by an id
     def get_student(self, id):
