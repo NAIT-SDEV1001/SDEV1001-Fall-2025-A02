@@ -2,6 +2,8 @@
 from .student import Student
 from .assignment import Assignment
 from .submissions import Submission
+
+
 class Course:
     def __init__(self, name):
         self.name = name
