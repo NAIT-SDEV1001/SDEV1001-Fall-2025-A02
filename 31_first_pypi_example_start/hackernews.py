@@ -7,6 +7,8 @@ def get_top_ten_headlines():
     ).json()
     return headline_ids[:10]
 
+def get_news_story_data(id):
+    story_url = F"https://hacker-news.firebaseio.com/v0/item/{id}.json?print=pretty"
 
 def main():
     top_ten_ids = get_top_ten_headlines()
