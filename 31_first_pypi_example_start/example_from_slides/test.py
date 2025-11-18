@@ -1,3 +1,4 @@
+# looking at the module that we've installed
 from dotenv import dotenv_values
 
 config = dotenv_values(".env")
