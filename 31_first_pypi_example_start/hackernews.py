@@ -15,10 +15,14 @@ def get_news_story_data(id):
     story_data = requests.get(story_url).json()
     return story_data
 
-
 def main():
     top_ten_ids = get_top_ten_headlines()
-
+    # loop through the ids
+    for index, id in enumerate(top_ten_ids):
+        # for each id get news story and print out the title with the number
+        # associated with it.
+        story_data = get_news_story_data(id)
+        print(F"{index + 1}: {story_data['title']}")
 
     print("The hackernews top 10")
     print(top_ten_ids)
