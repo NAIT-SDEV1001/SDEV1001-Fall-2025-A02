@@ -27,16 +27,27 @@ def add_recommendations_column_to_excel_file(
 
     # loop through every row that isn't a header
     for row in rows[1:]:
-
+        score = row[2] # third value in the row array
         # if the score is above 90
-        # add highly recommend
-        # it's abouve 80
-        # add recommend
-        # 70
-        # add average
-        # below that
-        # do not recommend
+        if score >= 90:
+            # add highly recommend
+            recommendations.append("Highly Recommend")
+        elif score >= 80:
+            # it's abouve 80
+            # add recommend
+            recommendations.append("Recommend")
+        elif score >= 70:
+            # 70
+            # add average
+            recommendations.append("Average")
+        else:
+            # below that
+            # do not recommend
+            recommendations.append("Tire fire")
+    # add a new column with all the values
+    sheet.column += recommendations
 
+    sheet.save_as(output_file)
 
 
 def main():
@@ -58,7 +69,7 @@ def main():
     )
     add_recommendations_column_to_excel_file(
         input_file=GAME_REVIEWS_FILE_NAME,
-        output_file="game_reviews_with_recommendation"
+        output_file="game_reviews_with_recommendation.xlsx"
     )
 
 
