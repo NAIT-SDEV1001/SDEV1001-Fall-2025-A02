@@ -15,6 +15,30 @@ def create_game_reviews_excel_file(data, output_file):
     # going to use the method inside of the pyexcel module to save
     # the data.
 
+def add_recommendations_column_to_excel_file(
+    input_file, output_file
+):
+    # get the sheet from excel
+    sheet = pex.get_sheet(file_name=input_file)
+    # let's get all of the values as an array
+    rows = sheet.to_array()
+    # create a new array for the recommendation column
+    recommendations = ["Recommendations"]
+
+    # loop through every row that isn't a header
+    for row in rows[1:]:
+
+        # if the score is above 90
+        # add highly recommend
+        # it's abouve 80
+        # add recommend
+        # 70
+        # add average
+        # below that
+        # do not recommend
+
+
+
 def main():
     # name it this file name.
     GAME_REVIEWS_FILE_NAME = "game_reviews.xlsx"
@@ -31,6 +55,10 @@ def main():
     create_game_reviews_excel_file(
         GAME_REVIEWS,
         output_file=GAME_REVIEWS_FILE_NAME
+    )
+    add_recommendations_column_to_excel_file(
+        input_file=GAME_REVIEWS_FILE_NAME,
+        output_file="game_reviews_with_recommendation"
     )
 
 
