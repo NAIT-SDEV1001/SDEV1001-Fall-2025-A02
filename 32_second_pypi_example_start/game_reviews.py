@@ -8,7 +8,12 @@ import pyexcel as pex # pex is just an alias for pyexcel
 
 def create_game_reviews_excel_file(data, output_file):
     # use the pyexcel module.
-    pex
+    pex.save_as(
+        array=data,
+        dest_file_name=output_file
+    )
+    # going to use the method inside of the pyexcel module to save
+    # the data.
 
 def main():
     # name it this file name.
@@ -22,6 +27,12 @@ def main():
         ["No Man's Sky", "PC", 90],
         ["Gollum", "PS5", 43],
     ]
+    # save the game review data in a file called game_reviews.xlsx
+    create_game_reviews_excel_file(
+        GAME_REVIEWS,
+        output_file=GAME_REVIEWS_FILE_NAME
+    )
+
 
 if __name__ == "__main__":
     main()
