@@ -1,3 +1,4 @@
+import csv
 # import a few things from flask.
 from flask import Flask, request, jsonify
 
@@ -13,7 +14,7 @@ def home():
             <title>UFO Sightings</title>
         </head>
         <body>
-            <h1>Welcome to the UFO Sightings API</h1>
+            <h1>Welcome to the UFO Sightings API😀</h1>
             <p>Use the /sightings route to get UFO sighting data.</p>
         </body>
     </html>
@@ -48,6 +49,18 @@ ufo_sightings = [
     }
 ]
 
+# create a function that's not a route but will just load the data
+def load_ufo_data(filepath):
+    sightings = []
+    with open(filepath, mode="r", encoding="utf-8") as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            sightings.append(row)
+    return sightings
+
+file = "data/scrubbed.csv"
+sightings = load_ufo_data(file)
+
 # create ufo sightings
 # http://localhost:5000/ufo_sightings
 @app.route('/ufo_sightings', methods=['GET'])
@@ -56,4 +69,5 @@ def get_sightings():
     # I want you to essentally load the data form the
     # scrubbed csv
     # return that data.
-    return jsonify(ufo_sightings)
+
+    return jsonify(sightings)
