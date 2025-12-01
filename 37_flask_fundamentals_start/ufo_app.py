@@ -12,10 +12,29 @@ def home():
     <html>
         <head>
             <title>UFO Sightings</title>
+
         </head>
         <body>
             <h1>Welcome to the UFO Sightings API😀</h1>
-            <p>Use the /sightings route to get UFO sighting data.</p>
+            <p>Use the /ufo_sightings route to get UFO sighting data.</p>
+            <ul></ul>
+            <script defer>
+            let list = document.querySelector('ul')
+            // fetch to the backend
+            const getSightings = async () => {
+                const response = await fetch('/ufo_sightings')
+                return await response.json()
+            }
+            document.addEventListener("DOMContentLoaded",async () => {
+                const sightings = await getSightings()
+                sightings.forEach((sighting) => {
+                    list.innerHTML += `<li>
+                        ${sighting.city}: ${sighting.datetime}
+                    </li>`
+                })
+            })
+
+            </script>
         </body>
     </html>
     """
@@ -81,4 +100,4 @@ def get_sightings():
         if city.lower() in sighting["city"].lower():
             filtered_sightings.append(sighting)
 
-    return jsonify(filtered_sightings[:10])# return the first 10
+    return jsonify(filtered_sightings[:10]) # return the first 10
