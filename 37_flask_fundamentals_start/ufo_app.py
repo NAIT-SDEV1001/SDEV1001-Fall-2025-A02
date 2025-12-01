@@ -19,21 +19,20 @@ def home():
             <p>Use the /ufo_sightings route to get UFO sighting data.</p>
             <ul></ul>
             <script defer>
-            let list = document.querySelector('ul')
-            // fetch to the backend
-            const getSightings = async () => {
-                const response = await fetch('/ufo_sightings')
-                return await response.json()
-            }
-            document.addEventListener("DOMContentLoaded",async () => {
-                const sightings = await getSightings()
-                sightings.forEach((sighting) => {
-                    list.innerHTML += `<li>
-                        ${sighting.city}: ${sighting.datetime}
-                    </li>`
+                let list = document.querySelector('ul')
+                // fetch to the backend
+                const getSightings = async () => {
+                    const response = await fetch('/ufo_sightings')
+                    return await response.json()
+                }
+                document.addEventListener("DOMContentLoaded",async () => {
+                    const sightings = await getSightings()
+                    sightings.forEach((sighting) => {
+                        list.innerHTML += `<li>
+                            ${sighting.city}: ${sighting.datetime}
+                        </li>`
+                    })
                 })
-            })
-
             </script>
         </body>
     </html>
