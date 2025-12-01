@@ -52,4 +52,8 @@ ufo_sightings = [
 # http://localhost:5000/ufo_sightings
 @app.route('/ufo_sightings', methods=['GET'])
 def get_sightings():
+    # instead of using the sightings above here
+    # I want you to essentally load the data form the
+    # scrubbed csv
+    # return that data.
     return jsonify(ufo_sightings)
