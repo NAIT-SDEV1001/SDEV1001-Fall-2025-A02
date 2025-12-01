@@ -58,8 +58,6 @@ def load_ufo_data(filepath):
             sightings.append(row)
     return sightings
 
-file = "data/scrubbed.csv"
-sightings = load_ufo_data(file)
 
 # create ufo sightings
 # http://localhost:5000/ufo_sightings
@@ -69,5 +67,18 @@ def get_sightings():
     # I want you to essentally load the data form the
     # scrubbed csv
     # return that data.
+    file = "data/scrubbed.csv"
+    sightings = load_ufo_data(file)
+    # we're getting query parameters
+    city = request.args.get('city', '')
+    if city == "": # if it's blank return the first ten sightings
+        return jsonify(sightings[:10])
+    # below here we're searching for those values
+    # searchable by city.
+    filtered_sightings = []
+    for sighting in sightings:
+        # a substring is another
+        if city.lower() in sighting["city"].lower():
+            filtered_sightings.append(sighting)
 
-    return jsonify(sightings)
+    return jsonify(filtered_sightings[:10])# return the first 10
