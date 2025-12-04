@@ -26,6 +26,16 @@ def load_ufo_data(filepath):
 
 @app.route('/ufo_sightings', methods=['GET'])
 def get_sightings():
+    # I want you to get the following from the request.args
+    # country (default country is blank)
+    # page (a number) here default will be one
+    # size (a number) default is 10
+
+
+
     scrubbed_sightings = load_ufo_data('data/scrubbed.csv')
+
+
+
     return jsonify(scrubbed_sightings)
 
