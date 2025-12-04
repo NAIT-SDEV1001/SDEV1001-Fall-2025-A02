@@ -84,8 +84,10 @@ def add_research_station():
             "error": "name and location are required."
         }), 400 # the request status code for bad request
     # everything below is valid ()
+    # saving to a csv is where in real life you'd connect to a database.
     with open('data/research_stations.csv', mode='a', newline='') as file:
         fieldnames = ['name', 'location']
+
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writerow({
             'name': name,
