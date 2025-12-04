@@ -59,3 +59,38 @@ def get_sightings():
 
 # I want you to add an enpoint that will get the research stations
 # return it as json.
+@app.route('/research_stations', methods=['GET'])
+def get_research_stations():
+    stations = load_ufo_data('data/research_stations.csv')
+    return jsonify(stations)
+
+
+# we're handle a request and give a response.
+@app.route('/add_research_station', methods=['POST'])
+def add_research_station():
+    # I'm going to get the data from the user
+    # we're going to do this using `get_json` on the request.
+    data = request.get_json() # send the data via json.
+    # data above is now going to be a dictionary
+    name = data.get('name')
+    location = data.get('location')
+    # this is where backend development become more of a thing.
+    # you 1. validate that the request is good.
+    # 2. you need to sanitize the data.
+    # we're not going to do this because we're not connected to a database.
+    # we're doing a very rudimentary way.
+    if not name or not location:
+        return jsonify({
+            "error": "name and location are required."
+        }), 400 # the request status code for bad request
+    # everything below is valid ()
+    with open('data/research_stations.csv', mode='a', newline='') as file:
+        fieldnames = ['name', 'location']
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writerow({
+            'name': name,
+            'location': location
+        })
+    return jsonify({
+        "message": "Research station added successfully"
+    }), 201 # the request status code for added successfully
