@@ -28,8 +28,14 @@ def load_ufo_data(filepath):
 def get_sightings():
     # I want you to get the following from the request.args
     # country (default country is blank)
+    country = request.args.get('country', '')
     # page (a number) here default will be one
+    page = int(request.args.get('page', 1))
     # size (a number) default is 10
+    size = int(request.args.get('size', 10))
+
+    # use the following to test.
+    # http://127.0.0.1:5000/ufo_sightings?country=ca&page=1&size=20
 
 
 
