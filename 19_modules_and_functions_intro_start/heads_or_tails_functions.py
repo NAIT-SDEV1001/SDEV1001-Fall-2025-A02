@@ -1,4 +1,5 @@
 import random
+
 # heads will be 0 and tails will be 1
 # I want you to move this in to get_coin_flip
 # function, this function is going to take
@@ -8,8 +9,9 @@ import random
 # called get_user_guess which will continuously
 # ask for "h" or "t"
 
+
 def get_coin_flip():
-    """Returns h or t based on the random coinflip""" # just a long string
+    """Returns h or t based on the random coinflip"""  # just a long string
     random_number = random.randint(0, 1)
     # i'm going to say that 0 is h
     # 1 t
@@ -28,8 +30,10 @@ def get_coin_flip():
     # returns above or executes this.
     return "t"
 
+
 def is_coin_flip_result_heads(result):
     return result == "h"
+
 
 def get_user_guess():
     # we can use similar techniques
@@ -41,8 +45,10 @@ def get_user_guess():
             # in the function
         print("sorry didn't get that.")
 
+
 def is_correct_guess(guess, result):
     return guess == result
+
 
 def main():
     print("The ultimate coin flipper")
@@ -57,8 +63,8 @@ def main():
         print("you're wrong")
 
     if is_coin_flip_result_heads(result):
-        print('you flipped heads')
+        print("you flipped heads")
+
 
 if __name__ == "__main__":
     main()
-
