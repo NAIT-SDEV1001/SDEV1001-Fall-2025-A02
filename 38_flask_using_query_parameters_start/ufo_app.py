@@ -37,11 +37,25 @@ def get_sightings():
     # use the following to test.
     # http://127.0.0.1:5000/ufo_sightings?country=ca&page=1&size=20
 
-
-
     scrubbed_sightings = load_ufo_data('data/scrubbed.csv')
 
+    filtered_sightings = scrubbed_sightings.copy()
+    # what I want you to do
+    # return the page 1 go from 0 to the size - 1
+    # if it's the next page (2) go from size to 2*size -1
+    # I also want you to filter on the country only if it's
+    # not a an empty string (return all if empty string).
+    if country != "":
+        for sighting in scrubbed_sightings:
+            # if it's not wer're going to remove it.
+            if country.lower() != sighting["country"].lower():
+                filtered_sightings.remove(sighting)
 
+    # let's do some of the pagination
+    min_index = (page - 1)*size
+    max_index = page*size - 1
 
-    return jsonify(scrubbed_sightings)
+    return jsonify(filtered_sightings[min_index:max_index])
 
+# I want you to add an enpoint that will get the research stations
+# return it as json.
