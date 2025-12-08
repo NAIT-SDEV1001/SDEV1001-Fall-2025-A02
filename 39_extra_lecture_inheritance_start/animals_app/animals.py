@@ -49,6 +49,8 @@ class Dog(Animal):
 
 
 # create a Cat class
+class Cat(Animal):
+    pass
 # import it in the __main__
 # change Sushi to use a Cat class
 # add properties of breed, anger_level

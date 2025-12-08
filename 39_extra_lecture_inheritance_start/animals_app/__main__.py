@@ -1,9 +1,9 @@
-from .animals import Animal, Dog
+from .animals import Animal, Dog, Cat
 
 print("Our Animals app")
 
 dog = Dog(name="Reg", color="Brown", num_legs=4, breed="Golden Lab")
-cat = Animal(name="Sushi", color="Black", num_legs=4)
+cat = Cat(name="Sushi", color="Black", num_legs=4)
 bird = Animal(name="Barry", color="Yellow", num_legs=2)
 
 # let's create a list of animals here
