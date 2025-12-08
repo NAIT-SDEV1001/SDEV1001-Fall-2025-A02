@@ -49,11 +49,16 @@ class Dog(Animal):
 
 
 # create a Cat class
-class Cat(Animal):
-    pass
 # import it in the __main__
 # change Sushi to use a Cat class
-# add properties of breed, anger_level
+class Cat(Animal):
+    # add properties of pattern, anger_level
+    def __init__(self, name, color, num_legs, anger_level, pattern):
+        # call the constructor of animal
+        super().__init__(name, color, num_legs)
+        # add our new properties
+        self.anger_level = anger_level
+        self.pattern = pattern
 # override make_a_noise to be dependant on the anger level
 # less 30 purrs
 # between 31-60 meow
