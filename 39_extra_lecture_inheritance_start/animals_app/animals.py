@@ -66,6 +66,7 @@ class Cat(Animal):
         # super().__str__() is calling the Animal (parent)'s method of __str__
         # we're just adding the breed to it.
         return F"{animal_string}\n anger level {self.anger_level}\n pattern {self.pattern}"
+
     # override make_a_noise to be dependant on the anger level
     def make_a_noise(self):
         # less 30 purrs
