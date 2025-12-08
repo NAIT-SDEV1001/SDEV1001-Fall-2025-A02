@@ -59,7 +59,25 @@ class Cat(Animal):
         # add our new properties
         self.anger_level = anger_level
         self.pattern = pattern
-# override make_a_noise to be dependant on the anger level
-# less 30 purrs
-# between 31-60 meow
-# over 60 it hisses.
+
+    def __str__(self):
+        # get the original animal string
+        animal_string = super().__str__()
+        # super().__str__() is calling the Animal (parent)'s method of __str__
+        # we're just adding the breed to it.
+        return F"{animal_string}\n anger level {self.anger_level}\n pattern {self.pattern}"
+    # override make_a_noise to be dependant on the anger level
+    def make_a_noise(self):
+        # less 30 purrs
+        if self.anger_level <= 30:
+            print(F"{self.name} says: Prrr")
+        # between 31-60 meow
+        elif self.anger_level <= 60:
+            print(F"{self.name} says: Meow Meow")
+        # over 60 it hisses.
+        else:
+            print(F"{self.name} says: hiss!")
+
+    # you can also make functions that are different than the class on this
+    def knock_over(self, item):
+        print(F"{self.name} knocks over a {item}")

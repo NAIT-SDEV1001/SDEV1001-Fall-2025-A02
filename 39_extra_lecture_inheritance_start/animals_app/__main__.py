@@ -15,10 +15,17 @@ all_animals = [dog, cat, bird]
 # their functions behave.
 for animal in all_animals:
     print("------------------")
+    print(F"class type: {type(animal)}")
     print(animal)
     print("Using the functions\n") # \n stands for new line
     # let's test out methods of a class
     animal.make_a_noise()
     animal.eat()
     animal.move()
+
+    # we can check to see if an animal is an instance of a certain class
+    if isinstance(animal, Cat):
+        animal.knock_over("glass")
+
+
     print("------------------")
