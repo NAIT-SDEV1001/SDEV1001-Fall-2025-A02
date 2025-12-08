@@ -46,3 +46,13 @@ class Dog(Animal):
 
     def make_a_noise(self):
         print(F"{self.name} starts barking! bark! bark!")
+
+
+# create a Cat class
+# import it in the __main__
+# change Sushi to use a Cat class
+# add properties of breed, anger_level
+# override make_a_noise to be dependant on the anger level
+# less 30 purrs
+# between 31-60 meow
+# over 60 it hisses.
