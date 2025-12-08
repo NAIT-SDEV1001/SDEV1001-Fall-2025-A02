@@ -43,3 +43,6 @@ class Dog(Animal):
         # super().__str__() is calling the Animal (parent)'s method of __str__
         # we're just adding the breed to it.
         return F"{animal_string}\n Breed {self.breed}"
+
+    def make_a_noise(self):
+        print(F"{self.name} starts barking! bark! bark!")
