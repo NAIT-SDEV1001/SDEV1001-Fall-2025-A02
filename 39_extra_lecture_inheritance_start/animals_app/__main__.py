@@ -2,7 +2,7 @@ from .animals import Animal, Dog
 
 print("Our Animals app")
 
-dog = Dog(name="Reg", color="Brown", num_legs=4)
+dog = Dog(name="Reg", color="Brown", num_legs=4, breed="Golden Lab")
 cat = Animal(name="Sushi", color="Black", num_legs=4)
 bird = Animal(name="Barry", color="Yellow", num_legs=2)
 
@@ -14,7 +14,7 @@ all_animals = [dog, cat, bird]
 for animal in all_animals:
     print("------------------")
     print(animal)
-    print("Using the functions\n")
+    print("Using the functions\n") # \n stands for new line
     # let's test out methods of a class
     animal.make_a_noise()
     animal.eat()

@@ -40,5 +40,6 @@ class Dog(Animal):
     def __str__(self):
         # get the original animal string
         animal_string = super().__str__()
+        # super().__str__() is calling the Animal (parent)'s method of __str__
         # we're just adding the breed to it.
         return F"{animal_string}\n Breed {self.breed}"
