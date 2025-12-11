@@ -29,9 +29,9 @@ This also builds upon our knowledge of inheritance that we've done (and if you h
 
 ## Steps.
 
-1. Create a file called `test_library_tools.py` in the same folder as the file `library_app.py`.
+### 1. Create a file called `test_library_tools.py` in the same folder as the file `library_app.py`.
 
-2. In that file import `unittest` and your library module and book.
+### 2. In that file import `unittest` and your library module and book.
 ```python
 # the testing library that's built in to python
 import unittest
@@ -42,3 +42,28 @@ import unittest
 from library_tools.book import Book
 from library_tools.library import Library
 ```
+### 3. Let's create our first test class for our `Book` class (no tests yet)
+
+In the file `test_library_tools.py` create a class named `TestBook` that inherits the class `unittest.TestCase` it should look a bit like below.
+
+```python
+class TestBook(unittest.TestCase):
+    pass
+```
+
+Now that we have our first environment here let's take at what happens when we run the tests.
+Run the tests with the following command:
+`python -m unittest test_library_tools.py`
+
+You should see the following output
+```
+$ python -m unittest test_library_tools.py
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+NO TESTS RAN
+```
+Now there's no tests that we've defined here
+
+
