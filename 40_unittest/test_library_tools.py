@@ -36,8 +36,23 @@ class TestBook(unittest.TestCase):
         # if you want to make your tests fail before
         # they pass you can use assertNotEqual
 
-
     # test the str.
+    def test_str(self):
+        expected_title = "Dungeon Crawler"
+        expected_author = "Matt Dinnamon"
+        expected_pages = 643
+        # create a book.
+        book = Book(
+            title=expected_title,
+            author=expected_author,
+            pages=expected_pages
+        )
+        # assert that the string are equal
+        self.assertEqual(
+            str(book),
+            F"{expected_title} by {expected_author}"
+        )
+
 
 
 # run the tests.
