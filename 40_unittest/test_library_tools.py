@@ -53,6 +53,32 @@ class TestBook(unittest.TestCase):
             F"{expected_title} by {expected_author}"
         )
 
+class TestLibrary(unittest.TestCase):
+    # test constructor
+    def test_init(self):
+        expected_name = "Dans Dandy Dungeon"
+        library = Library(expected_name)
+        # assertions
+        self.assertEqual(library.name, expected_name)
+        self.assertEqual(library.books, [])
+        # if you wanted to check if the test
+        # fails if you do the opposite you can use.
+        # self.assertNotEqual(library.name, expected_name)
+
+    # test the str
+    def test_str(self):
+        expected_name = "Dans Dandy Dungeon"
+        library = Library(expected_name)
+        self.assertEqual(
+            str(library),
+            F"Library({expected_name})"
+        )
+
+
+    # test add book
+    # test list books
+    # test get authors
+
 
 
 # run the tests.
